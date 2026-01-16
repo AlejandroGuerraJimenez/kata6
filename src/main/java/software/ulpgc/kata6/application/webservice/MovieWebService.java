@@ -32,6 +32,8 @@ public class MovieWebService {
                 .x(type)
                 .y("Count")
                 .use(selectExtract(type));
+
+        context.result(HistogramSerializer.serialize(histogram));
     }
 
     private Function<Movie, Integer> selectExtract(String type) {
